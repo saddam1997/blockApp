@@ -74,7 +74,7 @@
     <header id="page-header">
       <nav class="container">
         <p class="col first sm-col-03">
-          <a href="/"><img src="images/blockio-icon-white.svg" class="logo" /></a>
+          <a href="/"><img src="/../images/blockio-icon-white.svg" class="logo" /></a>
         </p>
         <ul class="col sm-col-03 right last">
           <li class="nav-security">
@@ -98,18 +98,17 @@
             <% if (session.authenticated) { %>
               <li class="nav-login">
                 <a href="/session/destroy" class="logoutlink">Logout</a>
-
               </li>
               <li class="nav-sign-up">
 
-                <a href="/dashboar">Wallet </a>
+                <a href="/user/dashboard/<%=session.User.id%>">Wallet</a>
               </li>
               <% } %>
 
             </ul>
           </nav>
         </header>
-        
+
         <%- body %>
 
 
@@ -136,7 +135,7 @@
     -->
 
     <!--TEMPLATES-->
-    
+
     <!--TEMPLATES END-->
 
 

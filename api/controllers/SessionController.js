@@ -62,7 +62,7 @@ module.exports = {
          req.session.authenticated = true;
 				 console.log("create....findOneByEmail req.session.authenticated = true.....................");
         req.session.User = user;
-        res.redirect('/user/dashboard/' + user.id);
+        res.redirect('/user/dashboard/' + req.session.User.id);
       }
 
 
