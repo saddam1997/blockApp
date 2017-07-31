@@ -63,6 +63,10 @@ module.exports = {
 				 console.log("create....findOneByEmail req.session.authenticated = true.....................");
         req.session.User = user;
         res.redirect('/user/dashboard/' + req.session.User.id);
+				// if(user.address==null){
+				// 	call rpc..........
+				// }
+
       }
 
 

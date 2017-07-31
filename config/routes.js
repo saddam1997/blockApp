@@ -40,6 +40,15 @@ module.exports.routes = {
   },
   '/signup': {
     view: 'signup'
+  },
+  '/security': {
+    view: 'security'
+  },
+  '/contacts': {
+    view: 'contacts'
+  },
+  '/docs': {
+    view: 'docs'
   }
 
   /***************************************************************************

@@ -1,11 +1,5 @@
-
-
-
-    <div>
-      <!-- if (Modernizr.webworkers) -->
-
-
-<div id="modalApiKeys" class="modal fade">
+<div>
+<!-- <div id="modalApiKeys" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content dash-font-size">
             <div class="modal-header">
@@ -29,34 +23,7 @@
             </div>
         </div>
     </div>
-</div>
-
-
-
-<div id="modalTestnetDesc" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">What are Testnets?</h4>
-            </div>
-            <div class="modal-body text-left">
-	      <p>Testnets exist for every coin, such as Bitcoin, Litecoin, and Dogecoin. They are, however, completely separate from the main networks, where currency holds real monetary value.</p>
-	      <p>Testnets have their own separate addresses, and coins. A Bitcoin Testnet coin, for example, cannot be transferred to a Bitcoin address. Testnet coins have no value, and are not traded for money like Bitcoin, Litecoin, and Dogecoin are. Payments are never made in Testnet coins.</p>
-	      <p>Testnets exist for the sole purpose of testing applications while using coins that do not hold monetary value. They are meant for developers to debug their implementations in a safe, sandbox environment, so that if developers make mistakes, these mistakes are not costly. Contrast this with making mistakes (such as transferring the wrong amount of coins to a destination address) on the main network, where every mistake costs you real money.</p>
-	      <p>Block.io provides you 3 different Testnets, one for each main network (Bitcoin, Litecoin, and Dogecoin). We provide you with Testnet coins so you can test your implementations in a sandbox environment.</p>
-            </div>
-            <div class="modal-footer">
-	      <p class="text-muted text-left">Confused about something? <a href="/contacts" target="_blank" rel="noreferrer">Contact us</a>, we're happy to help.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
+</div> -->
 
 <div style="margin: 0 auto;">
 
@@ -66,30 +33,11 @@
 </div>
 
 
-  <ul class="nav nav-pills nav-tabs" role="tablist" style="margin: 0 auto; margin-bottom: 25px; border-bottom: 0px; max-width: 1000px; margin-top: 25px; padding-left: 10px; padding-right: 10px;">
-    <li class="active"><a href="/dashboard/btc"><span class="visible-md visible-lg">Bitcoin (<img src="//alive-blockioinc.netdna-ssl.com/Bitcoin.png" width=25/>)</span><span class="visible-sm visible-xs"><img src='//alive-blockioinc.netdna-ssl.com/Bitcoin.png' width=25/></span></a></li>
-    <li class=""><a href="/dashboard/doge"><span class="visible-md visible-lg">Dogecoin (<img src='//alive-blockioinc.netdna-ssl.com/Dogecoin.png' width=25/>)</span><span class="visible-sm visible-xs"><img src='//alive-blockioinc.netdna-ssl.com/Dogecoin.png' width=25/></span></a></li>
-    <li class=""><a href="/dashboard/ltc"><span class="visible-md visible-lg">Litecoin (<img src="//alive-blockioinc.netdna-ssl.com/Litecoin.png" width=25/>)</span><span class="visible-sm visible-xs"><img src='//alive-blockioinc.netdna-ssl.com/Litecoin.png' width=25/></span></a></li>
-    <li class="dropdown  hidden-xs">
-      <a data-toggle="dropdown" class="dropdown-toggle" type="button">Testnets <b class="caret"></b></a>
-      <ul class="dropdown-menu">
-	<li><a href="#" id=modalTestnets>What's a Testnet?</a></li>
-	<li class="divider"></li>
-	<li ><a href="/dashboard/btctest">Bitcoin (Testnet!)</a></li>
-	<li ><a href="/dashboard/dogetest">Dogecoin (Testnet!)</a></li>
-	<li ><a href="/dashboard/ltctest">Litecoin (Testnet!)</a></li>
-      </ul>
-    </li>
-    <li class="pull-right">
-      <a href="/dashboard/settings" class="btn btn-lg btn-default"><span class="fa fa-cog visible-sm visible-xs"></span><span class="visible-md visible-lg">Settings</span></a>
-    </li>
-    <li class="pull-right">
-      <a href="#" class="btn btn-lg btn-default " id=modalAKs><span class="text-danger visible-md visible-lg"><strong>Show API Keys</strong></span><span class="fa fa-tasks visible-xs visible-sm"></span></a>
-    </li>
+  <!-- <ul class="nav nav-pills nav-tabs" role="tablist" style="margin: 0 auto; margin-bottom: 25px; border-bottom: 0px; max-width: 1000px; margin-top: 25px; padding-left: 10px; padding-right: 10px;">
     <li class="pull-right">
     <%= user.email %>
     </li>
-  </ul>
+  </ul> -->
 
 
 
@@ -109,14 +57,12 @@
             </div>
 	    <form action="/dashboard/btc" method="post" id="createAddressFormbtc" class="modal-form">
               <div class="modal-body text-center">
-
 		<p class="hidden-xs">This will create a random Bitcoin wallet address.</p>
 		<p class="visible-xs">Create a Bitcoin wallet address.</p>
 		<input name="authenticity_token" value="8BIwzE6kvWmFnjsmDaNYupjDe5mz2U1bI/3dlSXXq10=" type="hidden" />
 		<input type="hidden" value="true" name="get_new_address" />
 		<input type="hidden" value="c2ee-27bd-dd34-96fa" name="api_key" />
 		<input type="text" value="" name="label" class="form-control" placeholder="Optional label, examples: myhomewallet, pocketmoney, savings, ..." autocomplete="off" />
-
               </div>
 	      <div class="modal-footer">
 		<p class="text-muted">Labels are <strong>not</strong> wallet addresses.<span class="hidden-xs"> Leave blank if unsure.</span></p>
@@ -229,7 +175,35 @@
     </div>
 </div>
 
-<span id="outer-deposit-address" style="display: none;">asdasd</span>
+<div id="modalSendBtcModal" class="modal fade dash-font-size">
+    <div class="modal-dialog">
+        <div class="modal-content dash-font-size">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Send BTC modal </h4>
+            </div>
+            <div class="modal-body text-center">
+
+	      <div style="margin-bottom: 10px;">
+		<kbd class="deposit-address break-word hidden-md hidden-lg selectable-plain"></kbd>
+		<h4 class="deposit-address break-word hidden-xs hidden-sm"></h4>
+	      </div>
+
+	      <div id="qrcodeDiv"> </div>
+
+	      <p>You can send Bitcoin to the above address.</p>
+	      <p class="text-muted"><i class="text-info fa fa-info-circle poptip" data-placement=right data-toggle=tooltip title="This is a MultiSig address. If the sending service/wallet says this address is incorrect, that service/wallet does not support MultiSig addresses, and is most likely outdated and insecure."></i> Address is invalid?</p>
+	    </div>
+
+            <div class="modal-footer">
+	      <p class="text-muted text-left">Confused about something? <a href="/contacts" target="_blank" rel="noreferrer">Contact us</a>, we're happy to help.</p>
+	      <button class="btn btn-default btn-md" data-dismiss="modal">Cancel</button>
+	      <button class="btn btn-info btn-md reloadbutton">Done</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 
@@ -352,17 +326,21 @@
 
     <div class="row text-center">
 
-      <div class="col-md-1 col-md-offset-3 col-xs-2 col-xs-offset-2 poptip" data-toggle=tooltip title="Send &#3647; to anyone.">
+      <div class="col-md-1 col-md-offset-3 col-xs-2 col-xs-offset-2 poptip" data-toggle=tooltip
+      title="Send &#3647; to anyone.">
 	<span class="available_balance notranslate hidden" translate="no">0.00000</span>
 	<span class="from_user_ids notranslate hidden" translate="no"></span>
 	<span class="withdraw_from notranslate hidden" translate="no"></span>
 
-	<button class="btn btn-lg btn-default btn-responsive poptip disabled withdrawbutton"><i class="fa fa-send-o text-success fa-fw"></i></button>
+	<button class="btn btn-lg btn-default btn-responsive poptip  withdrawbutton"><i class="fa fa-send-o text-success fa-fw"></i></button>
       </div>
 
       <div class="col-md-2 col-xs-2 text-left">
 	<span class="outer_deposit_address notranslate hidden" translate="no">37i4kBZBDguWmtBApqzx8qRgV1PRXDRHsj</span>
-	<button class="btn btn-lg btn-default btn-responsive poptip depositbutton" title="Deposit &#3647; into your Block.io account" data-toggle=tooltip><i class="fa fa-qrcode text-primary fa-fw"></i></button>
+	<button class="btn btn-lg btn-default btn-responsive poptip depositbutton"
+    title="Deposit &#3647; into your Block.io account" data-toggle=tooltip>
+    <i class="fa fa-qrcode text-primary fa-fw"></i>
+  </button>
       </div>
 
       <div class="col-md-1 col-xs-2 col-md-offset-1">
@@ -392,16 +370,16 @@
         <div id="jplist-addrs" class="box jplist">
 
 	  <!-- ios button: show/hide panel -->
-	  <div class="jplist-ios-button" style="margin-bottom: 15px;">
+	  <!-- <div class="jplist-ios-button" style="margin-bottom: 15px;">
 	    <i class="fa fa-sort"></i>
 	    Menu
-	  </div>
+	  </div> -->
 
 	  <!-- panel -->
-	  <div class="jplist-panel box panel-top right">
+
 
 	    <!-- items per page dropdown -->
-	    <div
+	    <!-- <div
 	       class="jplist-drop-down hidden"
 	       data-control-type="items-per-page-drop-down"
 	       data-control-name="paging"
@@ -413,16 +391,16 @@
 		<li><span data-number="10" data-default="true"> 10 per page </span></li>
 		<li><span data-number="all"> View All </span></li>
 	      </ul>
-	    </div>
+	    </div> -->
 
 	    <!-- sort dropdown -->
-	    <div
+	    <!-- <div
 	       class="jplist-drop-down dash-font-size"
 	       data-control-type="sort-drop-down"
 	       data-control-name="sort"
 	       data-control-action="sort"
 	       data-datetime-format="{month}/{day}/{year}"
-	       style="margin-bottom: 10px;"> <!-- {year}, {month}, {day}, {hour}, {min}, {sec} -->
+	       style="margin-bottom: 10px;">
 
 	      <ul>
 		<li><span data-path="default">Sort by</span></li>
@@ -431,16 +409,14 @@
 		<li><span data-path=".available_balance_index" data-order="asc" data-type="text">Balance<i class="fa fa-arrow-down"></i></span></li>
 		<li><span data-path=".available_balance_index" data-order="desc" data-type="text">Balance<i class="fa fa-arrow-up"></i></span></li>
 	      </ul>
-	    </div>
+	    </div> -->
 
 	    <!-- filter by title -->
-	    <div class="text-filter-box" style="margin-bottom: 15px;">
+	    <!-- <div class="text-filter-box" style="margin-bottom: 15px;">
 
 	      <i class="fa fa-search jplist-icon"></i>
 
-	      <!--[if lt IE 10]>
-		  <div class="jplist-label">Filter by Title:</div>
-		  <![endif]-->
+
 
 	      <input
 		 data-path=".addrlabel"
@@ -451,9 +427,9 @@
 		 data-control-name="title-filter"
 		 data-control-action="filter"
 		 style="font-size: 0.8em;"/>
-	    </div>
+	    </div> -->
 
-	  </div>
+
 
 	  <!-- data -->
 	  <div class="list box text-shadow address-container">
@@ -511,23 +487,23 @@
 
 	  <div class="jplist-panel box panel-bottom">
 	    <!-- pagination results -->
-	    <div
+	    <!-- <div
 	       class="jplist-label dash-font-size"
 	       data-type="Page {current} of {pages}"
 	       data-control-type="pagination-info"
 	       data-control-name="paging"
 	       data-control-action="paging"
 	       >
-	    </div>
+	    </div> -->
 
 	    <!-- pagination -->
-	    <div
+	    <!-- <div
 	       class="jplist-pagination dash-font-size"
 	       data-control-type="pagination"
 	       data-control-name="paging"
 	       data-control-action="paging"
 	       >
-	    </div>
+	    </div> -->
 
 	  </div>
 
@@ -540,7 +516,9 @@
     <p style="margin: 15px;"></p>
 
     <div class="row hidden dash-font-size" style="margin-top: 25px;" id="txHistoryContainer">
-      <h4 class="text-center">Recent Transactions<br><small><span class="poptip" data-toggle=tooltip data-placement=top title="Transactions sent by Green Block.io Addresses are instantly spendable on receipt."><i class="fa fa-bolt text-success"></i> / <i class="fa fa-bolt"></i> = sent by a Green Address</span></small></h4>
+      <h4 class="text-center">Recent Transactions<br><small><span class="poptip"
+        data-toggle=tooltip data-placement=top title="Transactions sent by Green Block.io Addresses are instantly spendable on receipt.">
+        <i class="fa fa-bolt text-success"></i> / <i class="fa fa-bolt"></i> = sent by a Green Address</span></small></h4>
       <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 text-center tx-history-box">
 
 	<table class="table table-hover" id="txTable">
