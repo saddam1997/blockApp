@@ -4,16 +4,16 @@
  * @description :: Server-side logic for managing sessions
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
+ var bitcoin = require('bitcoin');
 
 module.exports = {
 
 	create: function(req, res, next) {
 
     console.log(req.param('email')+ "  create.........................   "+req.param('password'));
-    // Check for email and password in params sent via the form, if none
-    // redirect the browser back to the sign-in form.
+
+
     if (!req.param('email') || !req.param('password')) {
-      // return next({err: ["Password doesn't match password confirmation."]});
 
       var usernamePasswordRequiredError = [{
         name: 'usernamePasswordRequired',
@@ -59,17 +59,39 @@ module.exports = {
 				return;
       }
 			if (req.param('password') == user.password) {
-         req.session.authenticated = true;
-				 console.log("create....findOneByEmail req.session.authenticated = true.....................");
-        req.session.User = user;
+        req.session.authenticated = true;
+				req.session.User = user;
         res.redirect('/user/dashboard/' + req.session.User.id);
-				// if(user.address==null){
-				// 	call rpc..........
-				// }
+				if(user.address==undefined || user.address==null || user.address==''){
+          console.log("Creating new address ..................... ");
 
+          var client = new bitcoin.Client({
+           host: 'localhost',
+           port: 8332,
+           user: 'test',
+           pass: 'test',
+           timeout: 30000
+         });
+          var batch = [];
+          for (var i = 0; i < 1; ++i) {
+            batch.push({
+              method: 'getnewaddress',
+              params: [req.session.User.email]
+            });
+          }
+          client.cmd(batch, function(err, newCreateAddress, resHeaders) {
+            if (err) return console.log(err);
+                User.update({email:req.session.User.email},{address:newCreateAddress}).exec(function afterwards(err, updated){
+                  if (err) {
+                    console.log('Error to update user address ...... ');
+                    return;
+                  }
+                  req.session.User.address = newCreateAddress;
+                  console.log('New address is ::' + newCreateAddress);
+                });
+          });
+				}
       }
-
-
 
       // Compare password from the form params to the encrypted password of the user found.
    /*   bcrypt.compare(req.param('password'), user.encryptedPassword, function(err, valid) {

@@ -1,9 +1,9 @@
-$(document).ready(function(){
-    LeadDyno.key = "e675c09ce3426ec6c8dda67ae18abb234c0179cf";
-    LeadDyno.recordVisit();
-    LeadDyno.autoWatch();
-});
-  
+// $(document).ready(function(){
+//     LeadDyno.key = "e675c09ce3426ec6c8dda67ae18abb234c0179cf";
+//     LeadDyno.recordVisit();
+//     LeadDyno.autoWatch();
+// });
+
 (function() {
   var _fbq = window._fbq || (window._fbq = []);
   if (!_fbq.loaded) {

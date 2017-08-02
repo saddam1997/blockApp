@@ -44,8 +44,10 @@ var jsFilesToInject = [
   // Dependencies like jQuery, or Angular are brought in here
   //'js/dependencies/**/*.js',
   'js/jquery-2.1.1.min.js',
+  'js/angular.min.js',
   'js/index-page.js',
   'js/combined.min.js',
+  'js/app.js',
   'js/tab.js',
   'js/responsiveCarousel.min.js',
   'js/zxcvbn-async.min.js',

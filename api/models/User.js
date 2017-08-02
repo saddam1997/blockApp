@@ -9,10 +9,7 @@ module.exports = {
 
 
 attributes: {
-  id: {
-    type: 'string',
-    unique: true
-  },
+
  email: {
    type: 'string',
    email: true,
@@ -22,6 +19,14 @@ attributes: {
  password: {
    type: 'string',
    required: true
+ },
+ address: {
+     type: 'string',
+     unique: true
+ },
+ balance: {
+   type: 'float',
+   defaultsTo: 0.00
  }
 
 }

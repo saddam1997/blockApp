@@ -28,8 +28,9 @@ module.exports.policies = {
 
   // '*': true,
   user: {
-    dashboard: ["sessionAuth","userCanSeeProfile"],
+   dashboard: ["sessionAuth","userCanSeeProfile"],
    create : "usercreate",
+   createNewAddressApi : "usercreate",
    '*':"admin"
   }
 
