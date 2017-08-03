@@ -62,35 +62,7 @@ module.exports = {
         req.session.authenticated = true;
 				req.session.User = user;
         res.redirect('/user/dashboard/' + req.session.User.id);
-				if(user.address==undefined || user.address==null || user.address==''){
-          console.log("Creating new address ..................... ");
-
-          var client = new bitcoin.Client({
-           host: 'localhost',
-           port: 8332,
-           user: 'test',
-           pass: 'test',
-           timeout: 30000
-         });
-          var batch = [];
-          for (var i = 0; i < 1; ++i) {
-            batch.push({
-              method: 'getnewaddress',
-              params: [req.session.User.email]
-            });
-          }
-          client.cmd(batch, function(err, newCreateAddress, resHeaders) {
-            if (err) return console.log(err);
-                User.update({email:req.session.User.email},{address:newCreateAddress}).exec(function afterwards(err, updated){
-                  if (err) {
-                    console.log('Error to update user address ...... ');
-                    return;
-                  }
-                  req.session.User.address = newCreateAddress;
-                  console.log('New address is ::' + newCreateAddress);
-                });
-          });
-				}
+				
       }
 
       // Compare password from the form params to the encrypted password of the user found.

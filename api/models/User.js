@@ -7,7 +7,8 @@
 
 module.exports = {
 
-
+  autoCreatedAt: false,
+  autoUpdatedAt: false,
 attributes: {
 
  email: {
@@ -20,14 +21,25 @@ attributes: {
    type: 'string',
    required: true
  },
- address: {
-     type: 'string',
-     unique: true
- },
  balance: {
    type: 'float',
    defaultsTo: 0.00
- }
+ },
+
+ userTypes: {
+             collection: 'UserTypes',
+             via: 'user',
+             defaultsTo: [{"userType":"normaluser"}]
+ },
+ userAddresses: {
+             collection: 'UserAddresses',
+             via: 'user',
+             defaultsTo: [{"userAddress":""}]
+ },
+ toJSON: function() {
+  var obj = this.toObject();
+  return obj;
+}
 
 }
 };

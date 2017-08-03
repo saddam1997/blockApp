@@ -137,59 +137,7 @@
       </div>
     </div>
   </div>
-  <!-- <div id="modalPfbtc" class="modal fade dash-font-size">
-    <div class="modal-dialog">
-      <div class="modal-content dash-font-size">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h5 class="modal-title">New Forwarding Address</h5>
-        </div>
-        <div class="modal-body text-center">
 
-          <div style='margin-bottom: 25px;'>
-            <div id="pf-actual-body" class="hidden text-left" style="margin-left: 15px; margin-right: 15px;">
-              <div style="margin-bottom: 10px;">
-
-                <div class="text-center">
-                  <h6>Forwarding Address</h6>
-                  <kbd class="pf-forwarding-address break-word hidden-md hidden-lg selectable-plain"></kbd>
-                  <h4 class="pf-forwarding-address break-word hidden-xs hidden-sm"></h4>
-
-                  <div id="pfQrcodeDiv" style='margin-top: 15px;'> </div>
-                </div>
-
-                <h6>Private Key (Please Backup -- <i class="fa fa-warning text-danger poptip" data-toggle=tooltip title="Please write this Private Key down as a backup. You will not see this private key again for security reasons."></i>)</h6>
-                <span class="pf-forwarding-private-key small break-word" style="font-weight: fixed;"></span>
-
-                <p style='margin-top: 15px;'>Funds sent to the above address are forwarded to your Bitcoin Wallet address labeled <span class="pf-to-label" style='font-weight: bold;'></span>.
-                  <span class="pf-to-address hidden"></span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div id="pf-warning-body" class="text-center" style="margin-left: 15px; margin-right: 15px;">
-            <h4><i class="fa fa-warning text-warning"></i> Security Warning</h4>
-            <p class="text-left small"><em>Forwarding Addresses</em> are useful if the sender thinks your Block.io wallet address is invalid. Block.io uses Multi Signature addresses, and some wallets/sites do not yet recognize this new standard. In contrast, Forwarding Addresses
-              are Single Signature addresses, and recognized globally by sites that deal in Bitcoin.</p>
-            <p class="text-left small">By using a Forwarding Address, <strong>you are asking</strong> Block.io to <em>forward</em> funds from it to your Block.io Wallet. The new forwarding address is <em>not</em> a part of your Wallet, and is only a <em>proxy</em> to your Wallet.
-
-              <p class="text-left small">You will have the private key to access this address on your own if you wish. Block.io will also need this private key to forward funds to your Wallet. This means <em>Block.io will have access</em> to funds in this forwarding address alongside
-                yourself, and you will not have solitary control of your own funds until they are transferred to your Wallet from the <em>forwarding address</em>.</p>
-
-              <p class="text-left small">If you agree, please proceed to see your new Forwarding Address below.</p>
-              <button class="btn btn-xs btn-danger" data-dismiss="modal">Cancel</button>
-              <button class="btn btn-xs btn-info" id='pf-understand-button'>I Understand, and Agree</button>
-
-          </div>
-
-        </div>
-
-        <div class="modal-footer">
-          <p class="text-muted small text-left">Forwarding of funds to your Wallet will incur a Network Fee of 0.00020 &#3647;.</p>
-        </div>
-      </div>
-    </div>
-  </div> -->
 
   <div class="container" style="margin: 0 auto;">
   <div class="row" style="margin-bottom: 25px;">
@@ -245,10 +193,11 @@
 
                 <span class="col-xs-3 col-sm-1 col-md-1 title text-left" style="padding-top: 10px;">0.</span>
 
-                <span class="col-xs-9 col-sm-3 col-md-2 addrlabel text-left notranslate poptip" style="word-wrap: break-word; padding-top: 10px;" data-toggle=tooltip title="Label">defaulttest</span>
+                <span class="col-xs-9 col-sm-3 col-md-2 addrlabel text-left notranslate poptip"
+                style="word-wrap: break-word; padding-top: 10px;" data-toggle=tooltip title="Label"><%=user.userAddresses[0].label%></span>
                 <span class="col-xs-12 col-sm-8 col-md-4 address text-left notranslate top-bottom-padding-10">
       <div id="outer-deposit-address"  data-toggle=tooltip class="poptip" title="Bitcoin Address">
-        <kbd class="selectable-plain"><%=user.address%> </kbd></div>
+        <kbd class="selectable-plain"><%=user.userAddresses[0].userAddress%> </kbd></div>
     </span>
                 <span class="col-xs-12 col-sm-6 col-md-3 text-right notranslate top-bottom-padding-10" id="balances_<%=user.address%>">
 		  <span>
